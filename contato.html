@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Contato</title>
+		<meta charset = "utf-8">
+		<link rel="stylesheet" type="text/css" href="site.css">
+		<script type="text/javascript">
+		function checarEmail(){
+			if( document.forms[0].email.value=="" 
+ 			  || document.forms[0].email.value.indexOf('@')==-1 
+    			  || document.forms[0].email.value.indexOf('.')==-1 )
+			  {
+				   alert( "Por favor, informe um E-MAIL válido!" );
+	 			  return false;
+			  }
+		}
+
+
+		</script>
+	</head>
+	<body>
+		<div id="menu">
+  			  <ul>
+			  <center>
+        				<li><a href="index.html">Home</a></li>
+				<li><a href="informaçoes.html">Informações sobre a banda</a></li>
+				<li><a href="agenda.html">Agenda de shows</a></li>
+				<li><a href="fotos.html">Galeria de fotos</a></li>
+				<li><a href="contato.html">Entre em contato</a></li>
+        			</center>
+   			 </ul>
+		</div> 
+<form name="form1" action="-----------" method="post">
+	<label>
+		Nome:
+	</label>
+	<input name="nome" type="text" required><br /><br />
+	<label>
+		Email:
+	</label>
+	<input name="email" type="text" class="input" id="email"  required><br /><br />
+	<label>
+		Mensagem:
+	</label>
+	<input name="msg" type="text" required><br /><br />
+<center>
+	<input type="submit"  value="Enviar" onclick="return checarEmail()">
+</center>
+</form>
+
+<center><audio controls="controls" loop="true" autostart="true">
+  <source src="nota10.mp3" type="audio/mpeg" />
+Your browser does not support the audio element.
+</audio></center>
+<div id="rodape">
+			 <center>
+        				<p>JM PUBLICIDADE © 2018. TODOS OS DIREITOS RESERVADOS</p>
+		
+        			</center>
+		</div>
+	</body> 
+</html>

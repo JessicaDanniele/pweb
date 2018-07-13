@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Agenda</title>
+	<meta charset = "utf-8">		
+	<link rel="stylesheet" type="text/css" href="site.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script id="templateStructure" type="text/x-jquery-tmpl">
+		<tr>
+			<td>$(cidade)</td>
+			<td>$(dia)</td>
+		</tr>
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.getJSON("dados.json", function(data){
+				var table_data = '';
+				$.each(data, function(key, value) {
+					table_data += '<tr>';
+					table_data += '<td>' + value.cidade + '</td>';
+					table_data += '<td>' + value.dia + '</td>';
+					table_data += '</tr>';
+				});
+				$('#shows').append(table_data);
+			});
+		});
+
+	</script>
+</head>
+<body>
+	<div id="menu">
+		<ul>
+			<center>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="informaçoes.html">Informações sobre a banda</a></li>
+				<li><a href="agenda.html">Agenda de shows</a></li>
+				<li><a href="fotos.html">Galeria de fotos</a></li>
+				<li><a href="contato.html">Entre em contato</a></li>
+			</center>
+		</ul>
+	</div>
+
+	<center><table id="shows">
+		<tbody>
+			<tr>
+				<th>Cidade</th>
+				<th>Data</th>
+			</tr>
+
+		</tbody>
+	</table></center>
+
+		<center><audio controls="controls" loop="true" autoplay="true">
+			<source src="fazaspazes.mp3" type="audio/mpeg" />
+			Your browser does not support the audio element.
+		</audio></center>
+		<div id="rodape">
+			<center>
+				<p>JM PUBLICIDADE © 2018. TODOS OS DIREITOS RESERVADOS</p>
+
+			</center>
+		</div>
+	</body>
+	</html>
